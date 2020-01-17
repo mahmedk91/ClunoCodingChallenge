@@ -1,0 +1,29 @@
+{
+  "name": "cluno-lambda-functions",
+  "version": "1.0.0",
+  "description": "Cluno microservices backend written with AWS lambda functions",
+  "main": "handlers.js",
+  "author": "Mohd Ahmed Khan",
+  "dependencies": {
+    "@types/chai": "^4.2.7",
+    "aws-lambda": "^1.0.5",
+    "axios": "^0.18.0",
+    "cpx": "^1.5.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.4"
+  },
+  "scripts": {
+    "prebuild": "mkdirp ../dist || true",
+    "build-watch": "npm run prebuild && npm run copy-dependencies && tsc -w --preserveWatchOutput true",
+    "build": "npm run prebuild && npm run copy-dependencies && tsc",
+    "copy-dependencies": "cpx \"./node_modules/**/*\" ../dist/node_modules",
+    "test": "mocha --require ts-node/register ./**/*.spec.ts"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.39",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^13.1.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
