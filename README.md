@@ -7,21 +7,16 @@ Solution for the Cluno coding challenge
 Requirements -
 
 - NodeJS 12.x and npm
-- Docker
-- AWS SAM - https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
 
 ```
-cd lamdba_functions
 npm install
 ```
 
 ### Compiles and start app in development env
 
 ```
-cd lamdba_functions
 npm run build
-cd ..
-sam local start-api
+npm run start
 ```
 
 ### Run tests
@@ -29,7 +24,6 @@ sam local start-api
 There are a couple of tests you can run with
 
 ```
-cd lamdba_functions
 npm run test
 ```
 

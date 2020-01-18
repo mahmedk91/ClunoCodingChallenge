@@ -58,7 +58,7 @@ export default class DynamoDBService {
           }
           return parsedObject;
         case "L":
-          // Parse list if type is L and iteratively parse all elements of the list
+          // Parse list if type is L and recursively parse all elements of the list
           let parsedList: Array<any> = [];
           attribute[key].forEach(element => {
             element = this.parseAttribute(element);
